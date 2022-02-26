@@ -8,3 +8,7 @@ description              : "An amazing website."
 # url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 # baseurl                  : # the subpath of your site, e.g. "/blog"
 # repository               : "KTingLee/KTingLee.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+
+relative_links:
+  enabled:     true
+  collections: false
