@@ -26,3 +26,11 @@ ldap_add: Server is unwilling to perform (53)
 /etc/ldap/slapd.d
 sudo slappasswd
 ```
+
+## ldap_sasl_bind(SIMPLE): Can't contact LDAP server (-1)
+
+ldap 未啟動
+
+```bash
+systemctl start slapd
+```

@@ -56,3 +56,59 @@ gidNumber: 2001 ### >> 修改目標欄位值
 ```bash
 ldapmodify -x -W -D "cn=ldapadm,dc=example=org,dc=tw" -f test1.ldif
 ```
+
+## 查詢
+
+```bash
+[root@localhost slapd.d]# ldapsearch -x dc=example,dc=com,dc=tw
+# extended LDIF
+#
+# LDAPv3
+# base <> (default) with scope subtree
+# filter: dc=example,dc=com,dc=tw
+# requesting: ALL
+#
+
+# search result
+search: 2
+result: 32 No such object
+
+# numResponses: 1
+```
+
+```bash
+[root@localhost slapd.d]# ldapsearch -x cn=test2 -b dc=wezoom,dc=com,dc=tw
+# extended LDIF
+#
+# LDAPv3
+# base <dc=wezoom,dc=com,dc=tw> with scope subtree
+# filter: cn=test2
+# requesting: ALL
+#
+
+# test2, People, wezoom.com.tw
+dn: uid=test2,ou=People,dc=wezoom,dc=com,dc=tw
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: test2
+uid: test2
+uidNumber: 2002
+gidNumber: 100
+homeDirectory: /home/test2
+loginShell: /bin/bash
+gecos: test2
+shadowLastChange: 17058
+shadowMin: 0
+shadowMax: 99999
+shadowWarning: 7
+userPassword:: e1NTSEF9UW0wb2d1Y0dtRFJOTW1yQnhXMHA0U3pOZ3U2ME5DRlY=
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
+```
