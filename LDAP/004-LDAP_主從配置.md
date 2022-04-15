@@ -4,11 +4,14 @@
 
 ## 主機配置
 
+下列為規劃的主機配置
+
+```
 IP Address	    OS	        Node
 192.168.56.229	CentOS 7	LDAP-Master v
 192.168.56.236	CentOS 7	LDAP-Slave v
 192.168.56.166	Debian 11	LDAP-Client
-
+```
 
 ## Master 配置
 
