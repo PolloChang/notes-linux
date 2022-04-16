@@ -12,3 +12,8 @@ description              : "An amazing website."
 relative_links:
   enabled:     true
   collections: true
+
+readme_index:
+  enabled:          true
+  remove_originals: false
+  with_frontmatter: false
