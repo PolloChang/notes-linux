@@ -6,6 +6,8 @@
 gsettings set org.gnome.desktop.peripherals.touchpad send-events disabled-on-external-mouse
 ```
 
+* 我發現在 Debian 10 (Gnome3.30.2) 不會正常作用
+
 ## 電源管理 tlp
 
 ```bash
