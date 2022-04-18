@@ -11,7 +11,7 @@
 #### 安裝
 
 ```bash
-yum install openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel
+yum install -y openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel
 ```
 
 #### 啟動服務
@@ -100,7 +100,7 @@ tcp        0      0 0.0.0.0:389             0.0.0.0:*               LISTEN      
 tcp6       0      0 :::389                  :::*                    LISTEN      20077/slapd 
 ```
 
-## 重新產生slapd的設定檔
+## 重新產生slapd的設定檔(Debian)
 
 ```bash
 jameschang@ldap1:~$ sudo dpkg-reconfigure slapd
@@ -241,6 +241,107 @@ Unpacking ldap-utils (2.4.49+dfsg-2ubuntu1.8) ...
 Setting up ldap-utils (2.4.49+dfsg-2ubuntu1.8) ...
 Processing triggers for man-db (2.9.1-1) ...
 ```
+
+## 建立資料庫(Debian)
+
+
+index uid eq 重新建立 index
+
+```
+sudo dpkg-reconfigure slapd
+```
+
+安裝畫面截圖
+
+```
+┌───────────────────────────────────┤ Configuring slapd ├───────────────────────────────────┐
+│                                                                                           │ 
+│ If you enable this option, no initial configuration or database will be created for you.  │ 
+│                                                                                           │ 
+│ Omit OpenLDAP server configuration?                                                       │ 
+│                                                                                           │ 
+│                          <Yes>                             <No>                           │ 
+│                                                                                           │ 
+└───────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+```
+┌────────────────────────────────────────────────────────────────────────────────┤ Configuring slapd ├────────────────────────────────────────────────────────────────────────────────┐
+│ The DNS domain name is used to construct the base DN of the LDAP directory. For example, 'foo.example.org' will create the directory with 'dc=foo, dc=example, dc=org' as base DN.  │ 
+│                                                                                                                                                                                     │ 
+│ DNS domain name:                                                                                                                                                                    │ 
+│                                                                                                                                                                                     │ 
+│ wezoomtek.com______________________________________________________________________________________________________________________________________________________________________ │ 
+│                                                                                                                                                                                     │ 
+│                                                                                       <Ok>                                                                                          │ 
+│                                                                                                                                                                                     │ 
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+```
+┌──────────────────────────────────┤ Configuring slapd ├───────────────────────────────────┐
+│ Please enter the name of the organization to use in the base DN of your LDAP directory.  │ 
+│                                                                                          │ 
+│ Organization name:                                                                       │ 
+│                                                                                          │ 
+│ wezoomtek_______________________________________________________________________________ │ 
+│                                                                                          │ 
+│                                          <Ok>                                            │ 
+│                                                                                          │ 
+└──────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+```
+┌─────────────────────────┤ Configuring slapd ├──────────────────────────┐
+│ Please enter the password for the admin entry in your LDAP directory.  │ 
+│                                                                        │ 
+│ Administrator password:                                                │ 
+│                                                                        │ 
+│ ********______________________________________________________________ │ 
+│                                                                        │ 
+│                                 <Ok>                                   │ 
+│                                                                        │ 
+└────────────────────────────────────────────────────────────────────────┘ 
+```
+
+```
+┌───────────────────────────────────────────┤ Configuring slapd ├────────────────────────────────────────────┐
+│ Please enter the admin password for your LDAP directory again to verify that you have typed it correctly.  │ 
+│                                                                                                            │ 
+│ Confirm password:                                                                                          │ 
+│                                                                                                            │ 
+│ ********__________________________________________________________________________________________________ │ 
+│                                                                                                            │ 
+│                                                   <Ok>                                                     │ 
+│                                                                                                            │ 
+└────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+```
+┌─────────────────────┤ Configuring slapd ├─────────────────────┐
+│                                                               │ 
+│                                                               │ 
+│                                                               │ 
+│ Do you want the database to be removed when slapd is purged?  │ 
+│                                                               │ 
+│                <Yes>                   <No>                   │ 
+│                                                               │ 
+└───────────────────────────────────────────────────────────────┘
+```
+
+```
+┌────────────────────────────────────────────────────┤ Configuring slapd ├─────────────────────────────────────────────────────┐
+│                                                                                                                              │ 
+│ There are still files in /var/lib/ldap which will probably break the configuration process. If you enable this option, the   │ 
+│ maintainer scripts will move the old database files out of the way before creating a new database.                           │ 
+│                                                                                                                              │ 
+│ Move old database?                                                                                                           │ 
+│                                                                                                                              │ 
+│                                     <Yes>                                        <No>                                        │ 
+│                                                                                                                              │ 
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+```
+
 
 ## linux 驗證
 
