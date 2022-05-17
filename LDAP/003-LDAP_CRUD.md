@@ -77,17 +77,17 @@ result: 32 No such object
 ```
 
 ```bash
-[root@localhost slapd.d]# ldapsearch -x cn=test2 -b dc=wezoom,dc=com,dc=tw
+[root@localhost slapd.d]# ldapsearch -x cn=test2 -b dc=example,dc=com,dc=tw
 # extended LDIF
 #
 # LDAPv3
-# base <dc=wezoom,dc=com,dc=tw> with scope subtree
+# base <dc=example,dc=com,dc=tw> with scope subtree
 # filter: cn=test2
 # requesting: ALL
 #
 
-# test2, People, wezoom.com.tw
-dn: uid=test2,ou=People,dc=wezoom,dc=com,dc=tw
+# test2, People, example.com.tw
+dn: uid=test2,ou=People,dc=example,dc=com,dc=tw
 objectClass: top
 objectClass: account
 objectClass: posixAccount
@@ -112,3 +112,9 @@ result: 0 Success
 # numResponses: 2
 # numEntries: 1
 ```
+
+ldapsearch -x -o ldif-wrap=no -H "ldap://10.1.2.5" -b "uid=jameschang,ou=people,dc=example,dc=com,dc=tw" -w ""
+
+ldapsearch -x -o ldif-wrap=no -H "ldap://192.168.56.11" -b "ou=people,dc=mail,dc=werisetek,dc=com" -w "12341234"
+
+ldapsearch -x -o ldif-wrap=no -H "ldap://10.1.2.5" -b "uid=jameschang,ou=people,dc=example,dc=com,dc=tw" -w ""
