@@ -27,3 +27,44 @@ CentOS 跟客戶的作業系統是一樣的，但是在實際操作上，有發�
 最後我是採用這個發行版本。使用的第一個原因是「穩定」，相對的是套件的軟體版可能較舊。會選擇的原因，主要是「穩定」。因為我不想在我未來的三年內因為作業系統出了狀況，而去花費心思解決。
 
 花費心思的原因，接下來我會用之後的文章一一講給大家聽。
+
+
+
+
+
+Data type mapping for other data types:
+
+|     | **Oracle** | **SQL Server** |
+| --- | --- | --- | --- | --- |
+| 1   | BFILE | Pointer to binary file, ⇐ 4G | VARCHAR(255) |     |
+| 2   | BINARY_FLOAT | 32-bit floating-point number | REAL |     |
+| 3   | BINARY_DOUBLE | 64-bit floating-point number | DOUBLE PRECISION |     |
+| 4   | BLOB | Binary large object, ⇐ 4G | VARBINARY(max) |     |
+| 5   | CHAR(*n*), CHARACTER(*n*) | Fixed-length string, 1 ⇐ *n* ⇐ 2000 | CHAR(*n*), CHARACTER(*n*) |     |
+| 6   | [CLOB](https://www.sqlines.com/oracle/datatypes/clob "oracle:datatypes:clob") | Character large object, ⇐ 4G | VARCHAR(max) |     |
+| 7   | DECIMAL(*p,s*), DEC(*p,s*) | Fixed-point number | DECIMAL(*p,s*), DEC(*p,s*) |     |
+| 8   | DOUBLE PRECISION | Floating-point number | FLOAT |     |
+| 9   | FLOAT(*p*) | Floating-point number | FLOAT |     |
+| 10  | INTEGER, INT | 38 digits integer | DECIMAL(38) |     |
+| 11  | LONG | Character data, ⇐ 2G | VARCHAR(max) |     |
+| 12  | LONG RAW | Binary data, ⇐ 2G | VARBINARY(max) |     |
+| 13  | NCHAR(*n*) | Fixed-length UTF-8 string, 1 ⇐ *n* ⇐ 2000 | NCHAR(*n*) |     |
+| 14  | NCHAR VARYING(*n*) | Varying-length UTF-8 string, 1 ⇐ *n* ⇐ 4000 | NVARCHAR(*n*) |     |
+| 15  | NCLOB | Variable-length Unicode string, ⇐ 4G | NVARCHAR(max) |     |
+| 16  | NUMBER(*p*,0), NUMBER(*p*) | 8-bit integer, 1 <= *p* < 3 | TINYINT | (0 to 255) |
+| 16-bit integer, 3 <= *p* < 5 | SMALLINT |     |
+| 32-bit integer, 5 <= *p* < 9 | INT |     |
+| 64-bit integer, 9 <= *p* < 19 | BIGINT |     |
+| Fixed-point number, 19 <= *p* <= 38 | DECIMAL(*p*) |     |
+| 17  | NUMBER(*p,s*) | Fixed-point number, s > 0 | DECIMAL(*p,s*) |     |
+| 18  | NUMBER, NUMBER(*) | Floating-point number | FLOAT |     |
+| 19  | NUMERIC(*p,s*) | Fixed-point number | NUMERIC(*p,s*) |     |
+| 20  | NVARCHAR2(*n*) | Varying-length UTF-8 string, 1 ⇐ *n* ⇐ 4000 | NVARCHAR(*n*) |     |
+| 21  | [RAW(n)](https://www.sqlines.com/oracle/datatypes/raw "oracle:datatypes:raw") | Variable-length binary string, 1 ⇐ n ⇐ 2000 | VARBINARY(n) |     |
+| 22  | REAL | Floating-point number | FLOAT |     |
+| 23  | ROWID | Physical row address | CHAR(18) |     |
+| 24  | SMALLINT | 38 digits integer | DECIMAL(38) |     |
+| 25  | UROWID(*n*) | Logical row addresses, 1 ⇐ *n* ⇐ 4000 | VARCHAR(*n*) |     |
+| 26  | VARCHAR(*n*) | Variable-length string, 1 ⇐ *n* ⇐ 4000 | VARCHAR(*n*) |     |
+| 27  | VARCHAR2(*n*) | Variable-length string, 1 ⇐ *n* ⇐ 4000 | VARCHAR(*n*) |     |
+| 28  | XMLTYPE | XML data | XML |     |
