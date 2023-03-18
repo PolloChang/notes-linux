@@ -43,6 +43,13 @@ yum install qemu-guest-agent nmon curl wget vim autofs
 systemctl start qemu-guest-agent
 ```
 
+### CentOS6
+
+```bash
+service qemu-ga start
+chkconfig qemu-ga on
+```
+
 ## 參考資料
 
 [Chapter 11. Enhancing Virtualization with the QEMU Guest Agent and SPICE Agent](https://access.redhat.com/documentation/zh-tw/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/chap-qemu_guest_agent)
