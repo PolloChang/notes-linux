@@ -66,3 +66,12 @@ Failed to add entry for user jameschang.
 ```
 pollochang@pollochang-GL72-7RDX:~$ sudo service smbd restart
 ```
+
+## 防火牆
+
+```bash
+sudo firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.192.1.0/24" port protocol="tcp" port="137" accept' &&\
+sudo firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.192.1.0/24" port protocol="tcp" port="138" accept' &&\
+sudo firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.192.1.0/24" port protocol="tcp" port="139" accept' &&\
+sudo firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.192.1.0/24" port protocol="tcp" port="445" accept'
+```
