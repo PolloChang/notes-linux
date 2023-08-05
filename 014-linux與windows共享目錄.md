@@ -73,5 +73,5 @@ pollochang@pollochang-GL72-7RDX:~$ sudo service smbd restart
 sudo firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.192.1.0/24" port protocol="tcp" port="137" accept' &&\
 sudo firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.192.1.0/24" port protocol="tcp" port="138" accept' &&\
 sudo firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.192.1.0/24" port protocol="tcp" port="139" accept' &&\
-sudo firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.192.1.0/24" port protocol="tcp" port="445" accept'
+sudo firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.192.1.103" port protocol="tcp" port="8080" accept'
 ```
