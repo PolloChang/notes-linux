@@ -21,8 +21,3 @@ https://linuxconfig.org/how-to-install-macos-theme-on-ubuntu-20-04-focal-fossa-l
 
 [numix-icon-theme-circle](https://github.com/numixproject/numix-icon-theme-circle)
 
-## 移除遊戲
-
-```bash
-sudo apt remove gnome-nibbles gnome-klotski four-in-a-row hitori five-or-more gnome-chess gnome-maps gnome-remote-desktop gnome-tetravex gnome-taquin gnome-mahjongg gnome-robots quadrapassel gnome-mines gnome-characters
-```
